@@ -33,7 +33,7 @@ val mockkVersion: String by project
 val kotestVersion: String by project
 
 subprojects {
-    group = "io.github.detomarco.kotlinfixture"
+    group = "io.github.morbic.kotlinfixture"
     version = (System.getenv("LIB_VERSION") ?: System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
         ?.replaceFirst("refs/tags/", "") ?: "unspecified"
 
