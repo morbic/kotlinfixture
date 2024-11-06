@@ -42,6 +42,11 @@ allprojects {
     if (ghProjectVersion.isPresent) {
         version = ghProjectVersion.get()
     }
+
+    java {
+        withJavadocJar()
+        withSourcesJar()
+    }
 }
 
 subprojects {
