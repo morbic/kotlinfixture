@@ -34,11 +34,14 @@ val junitVersion: String by project
 val mockkVersion: String by project
 val kotestVersion: String by project
 
-subprojects {
+allprojects {
     group = "com.browarski.kotlinfixture"
-    version = (System.getenv("LIB_VERSION") ?: System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
-        ?.replaceFirst("refs/tags/", "") ?: "unspecified"
+    version = providers.environmentVariable("GITHUB_REF")
+        .map { it.replaceFirst("refs/tags/", "") }
+        .orElse("unspecified")
+}
 
+subprojects {
     apply {
         plugin("org.jetbrains.kotlin.jvm")
         plugin("io.gitlab.arturbosch.detekt")
