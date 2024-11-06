@@ -40,7 +40,6 @@ allprojects {
     val ghProjectVersion = providers.environmentVariable("GITHUB_REF")
         .map { it.replaceFirst("refs/tags/", "") }
     if (ghProjectVersion.isPresent) {
-        println("Setting project version to: ${ghProjectVersion.get()}")
         version = ghProjectVersion.get()
     }
 }
@@ -99,18 +98,11 @@ subprojects {
     }
 }
 
-tasks.jreleaserConfig {
-    doFirst {
-        println("*** ENVIRONMENT VARIABLE DUMP ***")
-        System.getenv().forEach { k, v -> println("${k} = ${v}") }
-    }
-}
-
 jreleaser {
     project {
         license = "APACHE-2.0"
-        authors = listOf("Appmattus Limited", "detomarco")
-        copyright = "2019-2023 Appmattus Limited, 2024 detomarco"
+        authors = listOf("Appmattus Limited", "detomarco", "Michal Browarski")
+        copyright = "2019-2023 Appmattus Limited, 2024 detomarco, 2024 Michal Browarski"
         description = "Fixtures for Kotlin providing generated values for unit testing"
     }
     signing {
