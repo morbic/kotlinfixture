@@ -1,8 +1,8 @@
 = KotlinFixture
-Detomarco <idp.detomarco@gmail.com>
+Michal Browarski <michal@browarski.com>
 :toc: preamble
 :toc-title: Contents
-:homepage: https://github.com/detomarco/kotlinfixture
+:homepage: https://github.com/morbic/kotlinfixture
 ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
@@ -11,11 +11,11 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 :link-appmattus: https://github.com/appmattus/kotlinfixture[KotlinFixture]
-:link-kotlinfixture: https://github.com/detomarco/kotlinfixture[KotlinFixture]
+:link-kotlinfixture: https://github.com/morbic/kotlinfixture[KotlinFixture]
 
-https://central.sonatype.com/search?q=g:io.github.detomarco.kotlinfixture&smo=true[image:https://img.shields.io/maven-central/v/io.github.detomarco.kotlinfixture/fixture[Maven Central]]
-https://github.com/detomarco/kotlinfixture/actions[image:https://github.com/detomarco/kotlinfixture/workflows/CI/badge.svg[CI status]]
-https://codecov.io/gh/detomarco/kotlinfixture[image:https://codecov.io/gh/detomarco/kotlinfixture/branch/main/graph/badge.svg[Coverage status]]
+https://central.sonatype.com/search?q=g:com.browarski.kotlinfixture&smo=true[image:https://img.shields.io/maven-central/v/com.browarski.kotlinfixture/fixture[Maven Central]]
+https://github.com/morbic/kotlinfixture/actions[image:https://github.com/morbic/kotlinfixture/workflows/CI/badge.svg[CI status]]
+https://codecov.io/gh/morbic/kotlinfixture[image:https://codecov.io/gh/morbic/kotlinfixture/branch/main/graph/badge.svg[Coverage status]]
 link:LICENSE.md[image:https://img.shields.io/badge/License-Apache%202.0-blue.svg[License]]
 
 A tool to generate well-defined, but essentially random, input following the
@@ -32,6 +32,7 @@ The differences between this fork and the original project are:
 1. `fixture-android-tests` module dropped. We'll consider to add it back if there is a demand for it.
 2. `fixture-javafaker` module replaced by `fixture-datafaker`
 3. `threeten` and `ktorm` build-in support dropped.
+4. Latest `kotest` (5.9) supported
 
 == Getting started
 
@@ -40,7 +41,7 @@ Include the following dependency in your `build.gradle.kts` file:
 [source,kotlin]
 ._build.gradle.kts_
 ----
-testImplementation("io.github.detomarco.kotlinfixture:fixture:<latest-version>")
+testImplementation("com.browarski.kotlinfixture:fixture:<latest-version>")
 ----
 
 Simply create a fixture and invoke it with the type to be generated:

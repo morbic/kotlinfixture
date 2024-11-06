@@ -1,6 +1,7 @@
 /*
  * Copyright 2021-2023 Appmattus Limited
  *           2024 Detomarco
+ *           2024 Michal Browarski
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +65,7 @@ publishing {
                 packaging = "jar"
                 name = "kotlinfixture"
                 description = "Kotlin Fixture"
-                url = "https://github.com/detomarco/kotlinfixture"
+                url = "https://github.com/morbic/kotlinfixture"
                 inceptionYear = "2024"
                 licenses {
                     license {
@@ -74,6 +75,10 @@ publishing {
                 }
                 developers {
                     developer {
+                        developer {
+                            id = "morbic"
+                            name = "Michal Browarski"
+                        }
                         id = "detomarco"
                         name = "Marco De Toma"
                     }
@@ -83,9 +88,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection = "scm:git:https://github.com/detomarco/kotlinfixture.git"
-                    developerConnection = "scm:git:ssh://github.com/detomarco/kotlinfixture.git"
-                    url = "https://github.com/detomarco/kotlinfixture"
+                    connection = "scm:git:https://github.com/morbic/kotlinfixture.git"
+                    developerConnection = "scm:git:ssh://github.com/morbic/kotlinfixture.git"
+                    url = "https://github.com/morbic/kotlinfixture"
                 }
             }
         }
