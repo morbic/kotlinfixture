@@ -36,9 +36,13 @@ val kotestVersion: String by project
 
 allprojects {
     group = "com.browarski.kotlinfixture"
-    version = providers.environmentVariable("GITHUB_REF")
+
+    val ghProjectVersion = providers.environmentVariable("GITHUB_REF")
         .map { it.replaceFirst("refs/tags/", "") }
-        .orElse("unspecified")
+    if (ghProjectVersion.isPresent) {
+        println("Setting project version to: ${ghProjectVersion.get()}")
+        version = ghProjectVersion.get()
+    }
 }
 
 subprojects {
