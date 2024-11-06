@@ -39,6 +39,7 @@ allprojects {
 
     val ghProjectVersion = providers.environmentVariable("GITHUB_REF")
         .map { it.replaceFirst("refs/tags/", "") }
+        .map { it.trimStart('v') }
     if (ghProjectVersion.isPresent) {
         version = ghProjectVersion.get()
     }
