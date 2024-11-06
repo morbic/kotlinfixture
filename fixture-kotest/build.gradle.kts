@@ -29,6 +29,11 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinxVersion")
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 publishing {
     publications {
         create<MavenPublication>("Maven") {
@@ -50,6 +55,10 @@ publishing {
                     }
                 }
                 developers {
+                    developer {
+                        id = "morbic"
+                        name = "Michal Browarski"
+                    }
                     developer {
                         id = "detomarco"
                         name = "Marco De Toma"

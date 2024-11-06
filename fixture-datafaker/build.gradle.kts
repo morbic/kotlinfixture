@@ -26,6 +26,11 @@ dependencies {
     api("net.datafaker:datafaker:$dataFakerVersion")
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 publishing {
     publications {
         create<MavenPublication>("Maven") {

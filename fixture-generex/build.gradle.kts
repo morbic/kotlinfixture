@@ -26,6 +26,11 @@ dependencies {
     api("com.github.mifmif:generex:$generexVersion")
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 publishing {
     publications {
         create<MavenPublication>("Maven") {

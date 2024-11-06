@@ -47,6 +47,11 @@ dependencies {
     testImplementation("org.jeasy:easy-random-core:${easyrandomVersion}")
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 publishing {
     publications {
         create<MavenPublication>("Maven") {
