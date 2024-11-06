@@ -1,5 +1,7 @@
 /*
+ * Copyright 2021-2023 Appmattus Limited
  * Copyright 2024 Detomarco
+ * Copyright 2024 Michal Browarski
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +35,7 @@ val mockkVersion: String by project
 val kotestVersion: String by project
 
 subprojects {
-    group = "io.github.morbic.kotlinfixture"
+    group = "com.browarski.kotlinfixture"
     version = (System.getenv("LIB_VERSION") ?: System.getenv("GITHUB_REF") ?: System.getProperty("GITHUB_REF"))
         ?.replaceFirst("refs/tags/", "") ?: "unspecified"
 
@@ -87,6 +89,13 @@ subprojects {
         autoUpdate = true
         // Disable the .NET Assembly Analyzer. Requires an external tool, and this project likely won't ever have .NET DLLs.
         analyzers.assemblyEnabled = false
+    }
+}
+
+tasks.jreleaserConfig {
+    doFirst {
+        println("*** ENVIRONMENT VARIABLE DUMP ***")
+        System.getenv().forEach { k, v -> println("${k} = ${v}") }
     }
 }
 
