@@ -178,7 +178,11 @@ class ClassResolverTest {
     fun `Constructs Java class with random constructor value`() {
         repeat(100) {
             assertIsRandom {
-                (context.resolve(com.browarski.kotlinfixture.FixtureTestJavaClass::class) as com.browarski.kotlinfixture.FixtureTestJavaClass).constructor
+                (
+                    context.resolve(
+                        com.browarski.kotlinfixture.FixtureTestJavaClass::class
+                    ) as com.browarski.kotlinfixture.FixtureTestJavaClass
+                    ).constructor
             }
         }
     }
@@ -187,7 +191,11 @@ class ClassResolverTest {
     fun `Constructs Java class with random setter value`() {
         repeat(100) {
             assertIsRandom {
-                (context.resolve(com.browarski.kotlinfixture.FixtureTestJavaClass::class) as com.browarski.kotlinfixture.FixtureTestJavaClass).mutable
+                (
+                    context.resolve(
+                        com.browarski.kotlinfixture.FixtureTestJavaClass::class
+                    ) as com.browarski.kotlinfixture.FixtureTestJavaClass
+                    ).mutable
             }
         }
     }
@@ -201,7 +209,9 @@ class ClassResolverTest {
                 }.build()
             )
 
-            val result = context.resolve(com.browarski.kotlinfixture.FixtureTestJavaClass::class) as com.browarski.kotlinfixture.FixtureTestJavaClass
+            val result = context.resolve(
+                com.browarski.kotlinfixture.FixtureTestJavaClass::class
+            ) as com.browarski.kotlinfixture.FixtureTestJavaClass
             assertEquals("custom", result.constructor)
         }
     }
@@ -215,7 +225,9 @@ class ClassResolverTest {
                 }.build()
             )
 
-            val result = context.resolve(com.browarski.kotlinfixture.FixtureTestJavaClass::class) as com.browarski.kotlinfixture.FixtureTestJavaClass
+            val result = context.resolve(
+                com.browarski.kotlinfixture.FixtureTestJavaClass::class
+            ) as com.browarski.kotlinfixture.FixtureTestJavaClass
             assertEquals("custom", result.mutable)
         }
     }

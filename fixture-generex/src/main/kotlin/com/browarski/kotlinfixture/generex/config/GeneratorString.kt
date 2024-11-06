@@ -16,8 +16,8 @@
 
 package com.browarski.kotlinfixture.generex.config
 
-import com.mifmif.common.regex.Generex
 import com.browarski.kotlinfixture.config.Generator
+import com.mifmif.common.regex.Generex
 
 /**
  * Generate a random string from a regular expression

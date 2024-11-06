@@ -16,7 +16,6 @@
 
 package com.browarski.kotlinfixture.resolver
 
-import com.browarski.kotlinfixture.FactoryMethodJavaClass
 import com.browarski.kotlinfixture.TestContext
 import com.browarski.kotlinfixture.Unresolved
 import com.browarski.kotlinfixture.assertIsRandom
@@ -131,7 +130,11 @@ class FactoryMethodResolverTest {
     fun `Constructs Java class with random constructor value`() {
         repeat(100) {
             assertIsRandom {
-                (context.resolve(com.browarski.kotlinfixture.FactoryMethodJavaClass::class) as com.browarski.kotlinfixture.FactoryMethodJavaClass).constructor
+                (
+                    context.resolve(
+                        com.browarski.kotlinfixture.FactoryMethodJavaClass::class
+                    ) as com.browarski.kotlinfixture.FactoryMethodJavaClass
+                    ).constructor
             }
         }
     }
@@ -140,7 +143,11 @@ class FactoryMethodResolverTest {
     fun `Constructs Java class with random setter value`() {
         repeat(100) {
             assertIsRandom {
-                (context.resolve(com.browarski.kotlinfixture.FactoryMethodJavaClass::class) as com.browarski.kotlinfixture.FactoryMethodJavaClass).mutable
+                (
+                    context.resolve(
+                        com.browarski.kotlinfixture.FactoryMethodJavaClass::class
+                    ) as com.browarski.kotlinfixture.FactoryMethodJavaClass
+                    ).mutable
             }
         }
     }
@@ -154,7 +161,9 @@ class FactoryMethodResolverTest {
                 }.build()
             )
 
-            val result = context.resolve(com.browarski.kotlinfixture.FactoryMethodJavaClass::class) as com.browarski.kotlinfixture.FactoryMethodJavaClass
+            val result = context.resolve(
+                com.browarski.kotlinfixture.FactoryMethodJavaClass::class
+            ) as com.browarski.kotlinfixture.FactoryMethodJavaClass
             assertEquals("custom", result.constructor)
         }
     }
@@ -168,7 +177,9 @@ class FactoryMethodResolverTest {
                 }.build()
             )
 
-            val result = context.resolve(com.browarski.kotlinfixture.FactoryMethodJavaClass::class) as com.browarski.kotlinfixture.FactoryMethodJavaClass
+            val result = context.resolve(
+                com.browarski.kotlinfixture.FactoryMethodJavaClass::class
+            ) as com.browarski.kotlinfixture.FactoryMethodJavaClass
             assertEquals("custom", result.mutable)
         }
     }

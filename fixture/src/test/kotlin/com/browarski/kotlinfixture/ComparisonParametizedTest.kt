@@ -18,14 +18,14 @@
 
 package com.browarski.kotlinfixture
 
-import com.flextrade.kfixture.KFixture
-import com.marcellogalhardo.fixture.Fixture
 import com.browarski.kotlinfixture.ComparisonParametizedTest.Result.IGNORE
 import com.browarski.kotlinfixture.ComparisonParametizedTest.Result.INVALID
 import com.browarski.kotlinfixture.ComparisonParametizedTest.Result.NOT_RANDOM
 import com.browarski.kotlinfixture.ComparisonParametizedTest.Result.UNSUPPORTED
 import com.browarski.kotlinfixture.ComparisonParametizedTest.Result.VALID
 import com.browarski.kotlinfixture.resolver.IterableKTypeResolverTest
+import com.flextrade.kfixture.KFixture
+import com.marcellogalhardo.fixture.Fixture
 import org.jeasy.random.EasyRandom
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
